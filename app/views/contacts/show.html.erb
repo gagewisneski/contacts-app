@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success"><%= @contact.first_name %></li>
+  <li class="list-group-item list-group-item-info"><%= @contact.last_name %></li>
+  <li class="list-group-item list-group-item-warning"><%= @contact.email %></li>
+  <li class="list-group-item list-group-item-danger"><%= @contact.phone_number %></li>
+</ul>
+
+<%= link_to "Edit Contact", "/contacts/#{@contact.id}/edit" %>
+<%= link_to "Delete Contact", "/contacts/#{@contact.id}", method: :delete%>

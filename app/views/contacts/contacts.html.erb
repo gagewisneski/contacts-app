@@ -1,0 +1,13 @@
+<h1>This is a contacts page</h1>
+
+<% @contacts.each do |contact|%>
+
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-success"><%= link_to contact.first_name, "/contacts/#{contact.id}" %></li>
+    <li class="list-group-item list-group-item-info"><%= contact.last_name %></li>
+    <li class="list-group-item list-group-item-warning"><%= contact.email %></li>
+    <li class="list-group-item list-group-item-danger"><%= contact.phone_number %></li>
+  </ul>
+
+<% end %>
+<!-- ruby runs but doesn't display anything on  the website with these tags -->
