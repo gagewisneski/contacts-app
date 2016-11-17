@@ -3,10 +3,10 @@
 <% @contacts.each do |contact|%>
 
   <ul class="list-group">
-    <li class="list-group-item list-group-item-success"><%= link_to contact.first_name, "/contacts/#{contact.id}" %></li>
-    <li class="list-group-item list-group-item-info"><%= contact.last_name %></li>
-    <li class="list-group-item list-group-item-warning"><%= contact.email %></li>
-    <li class="list-group-item list-group-item-danger"><%= contact.phone_number %></li>
+    <li class="list-group-item list-group-item-success"><%= link_to contact.full_name, "/contacts/#{contact.id}" %></li>
+    <li class="list-group-item list-group-item-info"><%= contact.email %></li>
+    <li class="list-group-item list-group-item-warning"><%= contact.phone_number %></li>
+    <li class="list-group-item list-group-item-danger">Created at: <%= contact.pretty_time %></li>
   </ul>
 
 <% end %>
