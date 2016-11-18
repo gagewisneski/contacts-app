@@ -2,8 +2,10 @@
   <li class="list-group-item list-group-item-success"><%= @contact.full_name %></li>
   <li class="list-group-item list-group-item-info"><%= @contact.email %></li>
   <li class="list-group-item list-group-item-warning"><%= @contact.phone_number %></li>
-  <li class="list-group-item list-group-item-danger">Created at: <%= @contact.pretty_time %></li>
+  <li class="list-group-item list-group-item-info">Bio: <%= @contact.bio %></li>
+  <li class="list-group-item list-group-item-danger">Updated at: <%= @contact.pretty_time %></li>
 </ul>
 
 <%= link_to "Edit Contact", "/contacts/#{@contact.id}/edit" %>
 <%= link_to "Delete Contact", "/contacts/#{@contact.id}", method: :delete%>
+<%= link_to "Home", "/contacts" %>

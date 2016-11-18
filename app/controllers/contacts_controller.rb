@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
   end
 
   def new_contact
-    @contact = Contact.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    @contact = Contact.new(first_name: params[:first_name], middle_name: params[:middle_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], bio: params[:bio])
     @contact.save
   end
 
@@ -24,7 +24,7 @@ class ContactsController < ApplicationController
 
   def update
     contact = Contact.find_by(id: params[:id])
-    contact.assign_attributes(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    contact.assign_attributes(first_name: params[:first_name], middle_name: params[:middle_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], bio: params[:bio])
     contact.save
 
     redirect_to "/contacts/#{contact.id}"
