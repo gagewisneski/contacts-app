@@ -32,6 +32,16 @@
   </div>
 
   <div>
+    <%= label_tag :longitude %>:
+    <%= text_field_tag :longitude, @contact.longitude %>
+  </div>
+
+  <div>
+    <%= label_tag :latitude %>:
+    <%= text_field_tag :latitude, @contact.latitude %>
+  </div>
+
+  <div>
     <%= submit_tag "Save Edit" %>
   </div>
 

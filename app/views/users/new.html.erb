@@ -1,0 +1,9 @@
+<h1>Create an account</h1>
+
+<%= form_tag "/users/create", method: :post do %>
+  <%= text_field_tag :name, "Name" %>
+  <%= text_field_tag :email, "Email" %>
+  <%= password_field_tag :password %>
+  <%= password_field_tag :password_confirmation %>
+  <%= submit_tag "Create Account" %>
+<% end %>

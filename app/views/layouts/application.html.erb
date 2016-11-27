@@ -9,6 +9,22 @@
   </head>
 
   <body>
+
+    <% unless current_user %>
+      <a href="/signup">Signup</a>
+      <a href="/login">Login</a>
+    <% else %>
+      <a href="/logout">Logout</a>
+    <% end %>
+
+    <div class="container">
+
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p><%= message %></p>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
