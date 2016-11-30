@@ -6,6 +6,12 @@
   <li class="list-group-item list-group-item-danger">Updated at: <%= @contact.pretty_time %></li>
 </ul>
 
+<ol class="list-group"> Groups:
+<% @contact.groups.each do |group| %>
+  <li><%= group.name.capitalize %></li>
+<% end %>
+</ol>
+
 <%= link_to "Edit Contact", "/contacts/#{@contact.id}/edit" %>
 <%= link_to "Delete Contact", "/contacts/#{@contact.id}", method: :delete%>
 <%= link_to "Home", "/contacts" %>

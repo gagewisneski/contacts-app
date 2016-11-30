@@ -3,7 +3,19 @@ class ContactsController < ApplicationController
 
   def contacts
 
-    @contacts = Contact.all
+    @group = Group.find_by(name: params[:group])
+
+    if params[:group]
+      @contacts = @group.contacts
+    else
+      @contacts = Contact.all
+    end
+
+    if @group == nil
+      @group = "Group"
+    else
+      @group = @group.name
+    end
 
   end
 
@@ -17,6 +29,10 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find_by(id: params[:id])
+
+    if current_user.id != @contact.user_id
+      redirect_to "/contacts"
+    end
   end
 
   def edit

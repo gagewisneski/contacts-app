@@ -1,5 +1,10 @@
 <h1>This is a contacts page</h1>
 
+<% Group.all.each do |group| %>
+<%= link_to "#{group.name}", "/contacts?group=#{group.name}"%>
+<% end %>
+
+
 <% @contacts.each do |contact|%>
 
   <% if current_user.id == contact.user_id %>
